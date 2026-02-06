@@ -351,8 +351,6 @@ plan(multisession, workers = d_output$runplan$workers)
 # Set random seed for reproducibility. Ensures that stochastic procedures (e.g., bootstrapping) produce identical results when the analysis is re-run.
 set.seed(d_output$runplan$seed)
 
-# ------------------------------------------------------------
-# Function: d_fun_getplrwt()
 # ==========================================================
 # 1) Create Poisson bootstrap (clustered by person)
 # ==========================================================
@@ -421,7 +419,6 @@ d_fun_getplrwt = function(dta_outc, dta_treat, ...) {
     Treat==1 & t_intrv == 12 & is.na(t_treat), 0,
     Treat==1 & t_intrv > 12 & is.na(t_treat), 1
   )]
-  
   # ==========================================================
   # 6) Create stabilized final weights (ipw1) by carrying forward treated-arm weights
   # ==========================================================
