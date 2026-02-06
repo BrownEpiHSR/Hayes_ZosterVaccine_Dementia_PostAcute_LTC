@@ -155,16 +155,15 @@ set.seed(d_output$runplan$seed)
 # family = binomial():
 #   Specifies logistic regression for binary outcome modeling.
 
-d_glm_wt1 = glm(outcome_vaccine ~ poly(t_intrv, 2, raw=T) + as.factor(BL_SEX) + poly(BL_AGE, 2) + as.factor(BL_ADL_CAT) + BL_ANEMIA + BL_ANALGESICS
-               + BL_ANTICOAGULANTS + BL_ANTICONVULSANTS + BL_ANTIDEPRESSANTS + BL_ANTIPSYCHOTICS + BL_ANTIVIRALS + BL_ARTHRITIS +
-                 BL_AFIB + BL_BENZODIAZEPINES + BL_CANCER + as.factor(BL_M3_CFS) + BL_CAD + BL_COVIDVAX + BL_DVT + BL_DIABETES + 
-                 as.factor(BL_ED_VISITS) + BL_FLUVAX + BL_GABAPENTANOIDS + as.factor(BL_GAGNE_CAT) + BL_HD + BL_HERPESZOSTER + 
-                 BL_HCHOL + as.factor(BL_HOSP_VISITS) + BL_HTN + BL_INSULIN + BL_MENTALHEALTH + as.factor(BL_MONTH) + BL_OSTEOFRAC +
-                 BL_PARKINSONS + BL_PVD + BL_PNEUMOVAX + BL_NONHIPFX + as.factor(BL_RACE) + BL_RENALF + BL_STROKE + 
-                 as.factor(BL_REGION) + as.factor (BL_YEAR) + BL_ZOSTAVAX + BL_PARTBCLAIM + 
-                 TV_ANTICOAGULANTS + TV_ANTIDEPRESSANTS + TV_ANTIPSYCHOTICS + TV_ANTIVIRALS + TV_CANCER + TV_COVIDVAX + TV_DVT + TV_DIABETES + 
-                 TV_ED_VISITS + TV_FLUVAX + TV_HERPESZOSTER + TV_HOSP_VISITS + TV_INSULIN + TV_DISCHARGE + TV_PNEUMOVAX + TV_RENALF + TV_STROKE + TV_ZOSTAVAX, 
-               data=expanded_vaccine_0, family=binomial())
+d_glm_wt1 = glm(outcome_vaccine ~ poly(t_intrv, 2, raw=T) + as.factor(BL_SEX) + poly(BL_AGE, 2) + as.factor(BL_ADL_CAT) + BL_ANEMIA +
+BL_ANALGESICS + BL_ANTICOAGULANTS + BL_ANTICONVULSANTS + BL_ANTIDEPRESSANTS + BL_ANTIPSYCHOTICS + BL_ANTIVIRALS + BL_ARTHRITIS +
+BL_AFIB + BL_BENZODIAZEPINES + BL_CANCER + as.factor(BL_M3_CFS) + BL_CAD + BL_COVIDVAX + BL_DVT + BL_DIABETES + as.factor(BL_ED_VISITS) + 
+BL_FLUVAX + BL_GABAPENTANOIDS + as.factor(BL_GAGNE_CAT) + BL_HD + BL_HERPESZOSTER + BL_HCHOL + as.factor(BL_HOSP_VISITS) + BL_HTN + 
+BL_INSULIN + BL_MENTALHEALTH + as.factor(BL_MONTH) + BL_OSTEOFRAC + BL_PARKINSONS + BL_PVD + BL_PNEUMOVAX + BL_NONHIPFX + 
+as.factor(BL_RACE) + BL_RENALF + BL_STROKE + as.factor(BL_REGION) + as.factor (BL_YEAR) + BL_ZOSTAVAX + BL_PARTBCLAIM + TV_ANTICOAGULANTS +
+TV_ANTIDEPRESSANTS + TV_ANTIPSYCHOTICS + TV_ANTIVIRALS + TV_CANCER + TV_COVIDVAX + TV_DVT + TV_DIABETES + TV_ED_VISITS + TV_FLUVAX + 
+TV_HERPESZOSTER + TV_HOSP_VISITS + TV_INSULIN + TV_DISCHARGE + TV_PNEUMOVAX + TV_RENALF + TV_STROKE + TV_ZOSTAVAX, 
+data=expanded_vaccine_0, family=binomial())
 
 # ------------------------------------------------------------
 # Export Odds Ratio Results to CSV File
