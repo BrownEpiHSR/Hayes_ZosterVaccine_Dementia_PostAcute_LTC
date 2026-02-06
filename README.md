@@ -4,7 +4,7 @@
 
 Vaccine Exposure and Dementia Risk Study
 
-Overview
+## Overview
 This repository contains code to estimate the association between vaccination and incident dementia using longitudinal administrative claims data.
 The analysis uses person-time panel datasets, inverse probability weighting (IPW), pooled logistic regression, and bootstrap methods to estimate:
 * Cumulative incidence of incident dementia
