@@ -2,7 +2,7 @@
 ## R code to construct IPW, fit weighted pooled logistic models, and estimate dementia cumulative incidence with bootstrap confidence intervals.
 
 
-Vaccine Exposure and Dementia Risk Study
+## Shingrix vaccine Exposure and Dementia Risk Study
 
 ## Overview
 This repository contains code to estimate the association between vaccination and incident dementia using longitudinal administrative claims data.
