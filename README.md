@@ -21,6 +21,7 @@ Throughout this project:
 ## Data Structure:
 ### Dataset 1: Treatment Panel (Exposure dataset)
 **File:** `expanded_vaccine_cov.sas7bdat`
+
 **Structure**
 * Person-month panel dataset
 * Each row represents one follow-up interval (t_intrv)
@@ -39,6 +40,7 @@ Purpose
 
 ### Dataset 2: Outcome Panel
 **File:** `dementia_outcome1_final.sas7bdat`
+
 **Structure**
 * Person-month panel dataset
 * Contains treatment strategy indicator (Treat)
