@@ -82,7 +82,7 @@ Weights are constructed to account for:
 Final weights:
 * ipw1 (carried forward where appropriate)
   
-## 3. Outcome Model
+### 3. Outcome Model
   
 A weighted pooled logistic regression estimates:
 P(incident dementia at time t)
@@ -91,7 +91,7 @@ Predicted values:
 * pr_ev =  probability of incident dementia at each interval
 * pr_surv = probability of remaining dementia-free
 
-## 4. Cumulative Incidence Estimation 
+### 4. Cumulative Incidence Estimation 
 Cumulative incidence is computed as: 1−pr_surv
 Aggregated by:
 * Treatment strategy
@@ -100,7 +100,7 @@ Effect measures:
 * CID = cumulative incidence difference
 * CIR = cumulative incidence ratio
 
-## 5. Bootstrap Inference
+### 5. Bootstrap Inference
 Uncertainty is estimated using:
 * Poisson bootstrap
 * Person-level resampling
@@ -108,7 +108,7 @@ Uncertainty is estimated using:
 Bootstrap results are used to compute:
 * 95% confidence intervals (percentile method)
 
-## 6. Visualization
+### 6. Visualization
 The script produces:
 1. Cumulative incidence curves
 2. Cumulative incidence ratio plots
