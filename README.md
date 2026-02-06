@@ -34,6 +34,7 @@ Follow-up ends at first occurrence of
 4. End of 4-year follow-up window 
 5. End of data
 6. Hospice entry
+   
 Purpose
 * Model vaccination probability over time
 * Estimate treatment assignment mechanism
@@ -64,18 +65,23 @@ Methods Overview:
 
 The analytic workflow proceeds as follows:
 1. Treatment Model
+   
 A pooled logistic regression estimates the probability of vaccination at each time interval using baseline and time-varying covariates.
+
 This produces:
 * Predicted treatment probabilities (pr_treat)
 * Cumulative probability of remaining untreated (cumpr_notreat)
 2. Inverse Probability Weights (IPW)
+  
 Weights are constructed to account for:
 * Time-varying treatment assignment
 * Grace-period design
 * Artificial censoring under treatment strategies
+  
 Final weights:
 * ipw1 (carried forward where appropriate)
 3. Outcome Model
+  
 A weighted pooled logistic regression estimates:
 P(incident dementia at time t)
 
