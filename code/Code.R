@@ -1,10 +1,10 @@
 
 ###############################################################
-# Project: Vaccine Exposure and Dementia Risk Study
+# Project: Shingrix vaccine Exposure and Dementia Risk Study
 
 # DESCRIPTION:
-# This script estimates the association between vaccination and incident dementia using longitudinal administrative 
-# claims data organized as person-time panels.
+# This script estimates the association between shingrix vaccination and incident dementia using longitudinal administrative 
+# claims data organized as person-time (month) panels.
 
 # DATA SOURCES:
 
@@ -31,7 +31,7 @@
 # DATASET 2: Outcome Panel Dataset (dementia_outcome1_final.sas7bdat)
 # ------------------------------------------------------------
 # Structure:
-#   - Person-period monthly panel dataset 
+#   - Person month panel dataset 
 #   - Each row represents one time interval of follow-up (t_intrv)
 #   - Contains t_treat variable which is the monthly interval for having vaccinated
 #   - Contains baseline and time-varying covariates
@@ -178,7 +178,7 @@ write.csv(
   row.names = FALSE
 )
 
-# Add predicted treatment probabilities to exposure dataset 
+# Add predicted probabilities to exposure dataset 
 # Extracts fitted (predicted) probabilities from the logistic model to the exposure dataset and stores the values as a new variable (pr_treat)
 expanded_vaccine_0$pr_treat = d_glm_wt1$fitted.values  
 
@@ -330,7 +330,6 @@ write.csv(d_res1,file='P:/hzvnh/shared/Data/Dementia Outcome 1/Baseline_Timevary
 # ------------------------------------------------------------
 # Configure Bootstrapping and Analysis Runtime Settings
 # ------------------------------------------------------------
-
 # Increase allowed size of global objects for parallel processing.
 # This prevents memory errors when large datasets or model objects are passed to workers during bootstrapping.
 
@@ -361,14 +360,14 @@ set.seed(d_output$runplan$seed)
 
 d_fun_getplrwt = function(dta_outc, dta_treat, ...) {
   
-  # Person-level Poisson(1) frequency weights for the bootstrap replicate
+  # Person-month level Poisson(1) frequency weights for the bootstrap replicate
   d_freqwt = distinct(dta_outc, clientid) %>%
     mutate(., freqwt = rpois(n(), 1L))
   
-  # Attach person-level bootstrap weights to outcome dataset
+  # Attach person-month level bootstrap weights to outcome dataset
   dta_outc = left_join(dta_outc, d_freqwt, by='clientid')
   
-  # Attach person-level bootstrap weights to treatment dataset
+  # Attach person- month level bootstrap weights to treatment dataset
   dta_2 = left_join(dta_treat, d_freqwt, by='clientid')
   
   # ==========================================================
@@ -497,7 +496,7 @@ d_ids_1= distinct(dementia_outcome1_join, clientid)
 
 # Run Poisson bootstrap replicates in parallel using furrr.
 # For each bootstrap iteration:
-#   - A Poisson(1) frequency weight is generated at the person level inside d_fun_getplrwt()
+#   - A Poisson(1) frequency weight is generated at the person month level inside d_fun_getplrwt()
 #   - Treatment and outcome models are re-fitted
 #   - Predicted cumulative incidence of incident dementia is returned
 # future_map() executes iterations in parallel according to the previously defined future::plan().
