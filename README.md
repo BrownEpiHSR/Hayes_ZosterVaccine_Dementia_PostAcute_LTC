@@ -19,7 +19,7 @@ Throughout this project:
 * 95% bootstrap confidence intervals are based on the 2.5th and 97.5th percentiles.
 
 ## Data Structure:
-### Dataset 1: Treatment Panel(Exposure dataset)                                                                                                                                        **File:** : `expanded_vaccine_cov.sas7bdat`                                                                                                                                            **Structure**
+### Dataset 1: Treatment Panel(Exposure)                                                                                                                                        **File:** : `expanded_vaccine_cov.sas7bdat`                                                                                                                                            **Structure**
 * Person-month panel dataset
 * Each row represents one follow-up interval (t_intrv)
 * Includes baseline and time-varying covariates
@@ -36,7 +36,7 @@ Purpose
 * Generate inverse probability weights
 
 ### Dataset 2: Outcome Panel
-**File:** : `dementia_outcome1_final.sas7bdat`
+**File:** `dementia_outcome1_final.sas7bdat`
 ** Structure **
 * Person-month panel dataset
 * Contains treatment strategy indicator (Treat)
