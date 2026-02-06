@@ -64,7 +64,7 @@ Purpose
 Methods Overview:
 
 The analytic workflow proceeds as follows:
-## 1. Treatment Model
+### 1. Treatment Model
    
 A pooled logistic regression estimates the probability of vaccination at each time interval using baseline and time-varying covariates.
 
@@ -72,7 +72,7 @@ This produces:
 * Predicted treatment probabilities (pr_treat)
 * Cumulative probability of remaining untreated (cumpr_notreat)
   
-## 2. Inverse Probability Weights (IPW)
+### 2. Inverse Probability Weights (IPW)
   
 Weights are constructed to account for:
 * Time-varying treatment assignment
