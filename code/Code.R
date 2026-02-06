@@ -106,7 +106,7 @@ cat('Done', '\n')
 
 # Read exposure (vaccine)treatment) SAS dataset expanded_vaccine_cov.sas7bdat into R
 # NULL indicates that all variables from the SAS file should be imported.
-expanded_vaccine_0 <- read_sas("P:/your path/expanded_vaccine_cov.sas7bdat",  NULL)
+expanded_vaccine_0 <- read_sas("P:/your folder path/expanded_vaccine_cov.sas7bdat",  NULL)
 
 # --------------------------------------------
 # Parallel / bootstrap configuration options
@@ -173,7 +173,7 @@ write.csv(
     variable   = names(odds_ratio),
     odds_ratio = as.numeric(odds_ratio)
   ),
-  file = "P:/file path.csv",
+  file = "P:/file path/filename.csv",
   row.names = FALSE
 )
 
@@ -192,7 +192,7 @@ expanded_vaccine_0[, cumpr_notreat := cumprod(1-pr_treat), by = .(clientid)]
 
 # Imports dementia outcome panel dataset which contains both unassigned (not to have vaccine) treat = 0, and 
 # assigned (to have vaccine) treat = 1
-Demetia_outcome_1 <- read_sas("P:/your path/dementia_outcome1_final.sas7bdat", NULL)
+Demetia_outcome_1 <- read_sas("P:/your folder path/dementia_outcome1_final.sas7bdat", NULL)
 
 # Bring the cumulative probability from the treatment (exposure) dataset to the dementia outcome dataset and 
 # Include only necessary variables from exposure dataset. Match by clientid and time intervals across datasets
@@ -222,7 +222,7 @@ setDT(dementia_outcome1_join)
 
 #   - For Treat==0 observations, we weight by the inverse of the probability of remaining untreated up to time t (1 / cumpr_notreat).
 #   - For Treat==1 observations, a grace period is applied (here, t_intrv < 12): 
-#   - individuals are not censored for not yet receiving treatment during the grace window, so weights are set to 1 in that period (cant censor at grace)
+#   - Individuals are not censored for not yet receiving treatment during the grace window, so weights are set to 1 in that period (cant censor at grace)
 #   - At the end of the grace period (t_intrv == 12): weights/censoring depend on whether vaccination occurred by the grace endpoint.
 #   - After grace (t_intrv > 12), weights are generally set to 1 because the treated strategy no longer censors based on "not yet treated" (per this design)
 
@@ -324,7 +324,7 @@ d_res1 = dementia_outcome1_join %>%
          cir = pr_ev_1 / pr_ev_0)
 
 # Saves summarized estimates of cumulative incidence of incident dementia to an external CSV file
-write.csv(d_res1,file='P:/hzvnh/shared/Data/Dementia Outcome 1/Baseline_Timevarying_adjusted_Dementia1/d_res1.csv', row.names=FALSE)
+write.csv(d_res1,file='P:your folder path/d_res1.csv', row.names=FALSE)
 
 # ------------------------------------------------------------
 # Configure Bootstrapping and Analysis Runtime Settings
@@ -552,14 +552,14 @@ d_summ_surv1 = d_surv %>%
 # ------------------------------------------------------------
 # Export Final Bootstrap Summary Results to CSV
 # ------------------------------------------------------------
-write.csv(d_summ_surv1,file='P:/hzvnh/shared/Data/Dementia Outcome 1/Baseline_Timevarying_adjusted_Dementia1/dementia1_bl_tv.csv', row.names=FALSE)
+write.csv(d_summ_surv1,file='P:/your folder path/dementia1_bl_tv.csv', row.names=FALSE)
 
 # ------------------------------------------------------------
 # Reload Results for Plotting
 # ------------------------------------------------------------
 # This step is typically used to:
 #   - ensure plots are generated from saved outputs
-d_summ_surv1 <- read.csv('P:\\hzvnh\\shared\\Data\\Dementia Outcome 1\\Baseline_Timevarying_adjusted_Dementia1\\dementia1_bl_tv.csv')
+d_summ_surv1 <- read.csv('P:/your folder path/dementia1_bl_tv.csv')
 
 # ------------------------------------------------------------
 # Plot Cumulative Incidence of Incident Dementia with 95% CIs
@@ -610,10 +610,10 @@ d_gg_1
 
 # Figures are saved in both PNG (raster) and EPS (vector) formats or use in presentations and publication-quality documents.
 
-ggsave("P:/hzvnh/shared/Data/Dementia Outcome 1/Baseline_Timevarying_adjusted_Dementia1/dementia1_bl_tv_v2.png",
+ggsave("P:/your folder path/dementia1_bl_tv_v2.png",
        plot=d_gg_1, width = 12, height=8, dpi=300)
 
-ggsave("P:/hzvnh/shared/Data/Dementia Outcome 1/Baseline_Timevarying_adjusted_Dementia1/dementia1_bl_tv.eps",
+ggsave("P:/our folder path/dementia1_bl_tv.eps",
        plot=d_gg_1, width = 12, height=8, dpi=300, device = cairo_ps)
 
 
