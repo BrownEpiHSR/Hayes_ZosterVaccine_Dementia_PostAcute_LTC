@@ -1,5 +1,5 @@
 ###############################################################
-Project: Vaccine Exposure and Dementia Risk Study
+## Project: Vaccine Exposure and Dementia Risk Study
 
 # DESCRIPTION:
 # This script analyzes the association between vaccination and incident dementia using longitudinal administrative claims data.
