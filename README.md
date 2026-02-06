@@ -26,6 +26,7 @@ Throughout this project:
 * Person-month panel dataset
 * Each row represents one follow-up interval (t_intrv)
 * Includes baseline and time-varying covariates
+  
 Follow-up ends at first occurrence of
 1. Shingrix vaccination
 2. Death
@@ -46,6 +47,7 @@ Purpose
 * Contains treatment strategy indicator (Treat)
 * Contains vaccination timing (t_treat)
 * Includes baseline and time-varying covariates
+  
 Follow-up ends at first occurrence of
 1. Dementia diagnosis
 2. Death
@@ -53,6 +55,7 @@ Follow-up ends at first occurrence of
 4. End of 4-year follow-up window
 5. End of data
 6. Hospice entry
+   
 Purpose
 * Estimate dementia incidence
 * Evaluate vaccine exposure effect
