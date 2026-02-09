@@ -35,7 +35,6 @@ Follow-up ends at first occurrence of
    
 Purpose
 * Model vaccination probability over time
-* Estimate treatment assignment mechanism
 * Generate inverse probability weights
 
 ### Dataset 2: Outcome Panel
