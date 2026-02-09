@@ -109,7 +109,7 @@ Individuals are censored at minimum of:
     * End of data (December 31, 2022)
     * Hospice
     * Dementia diagnosis
- 
+   
 If dementia occurs before censoring:
 * Event is counted
 
