@@ -285,9 +285,13 @@ unnest_wider(quantiles)
 # ------------------------------------------------------------
 # Outcome model: weighted pooled logistic regression
 # ------------------------------------------------------------
-# Fits a weighted pooled logistic regression model to estimate dementia risk over time, incorporating inverse probability weights (ipw1).
-# Including time only using a quadratic term
+# Fits a weighted pooled logistic regression model to estimate dementia risk over time with
+  #   - quadratic time trend
+  #   - Treat as an main effect
+  #   - time-by-treatment interaction
+# Incorporating inverse probability weights (ipw1).
 # Models non-linear changes in outcome risk over time.
+
 d_glm_pe2 = glm(outcome_dementia ~ poly(t_intrv, 2, raw=T)*Treat,data=dementia_outcome1_join,
                 family= binomial(), weights = ipw1)
 
