@@ -29,6 +29,7 @@ This ensures:
 This is why the outcome dataset contains:
 
 Treat = 0
+
 Treat = 1
 
 Throughout this project:
