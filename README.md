@@ -159,6 +159,7 @@ Uncertainty is estimated using:
 * Poisson bootstrap
 * Person-level resampling
 * Parallel processing
+  
 Bootstrap results are used to compute:
 * 95% confidence intervals (percentile method)
 
