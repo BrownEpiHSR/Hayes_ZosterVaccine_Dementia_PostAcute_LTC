@@ -18,7 +18,7 @@ The analysis uses person-time panel datasets, inverse probability weighting (IPW
 3. Weight observations to account for artificial censoring
 
 ### Step 1: Clone
-      ### Each individual is duplicated and assigned to both strategies:
+      ###Each individual is duplicated and assigned to both strategies:
 * Strategy 1: No vaccination
 * Strategy 2: Vaccination within the grace period
 This ensures:
