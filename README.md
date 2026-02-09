@@ -20,6 +20,7 @@ Throughout this project:
 **File:** `expanded_vaccine_cov.sas7bdat`
 
 **Structure**
+* Included only unassigned clone
 * Person-month panel dataset
 * Each row represents one follow-up interval (t_intrv)
 * Includes baseline and time-varying covariates
@@ -41,6 +42,7 @@ Purpose
 **File:** `dementia_outcome1_final.sas7bdat`
 
 **Structure**
+* Included both set of clones assigned and unassigned 
 * Person-month panel dataset
 * Contains treatment strategy indicator (Treat)
 * Contains vaccination timing (t_treat)
