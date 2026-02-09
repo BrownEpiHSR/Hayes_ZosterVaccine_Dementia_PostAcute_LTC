@@ -126,7 +126,7 @@ grid.draw.ggsurvplot = function(x) {
 # Analysis runtime settings used throughout (including bootstrapping).
 d_output = list(runtime = Sys.time(),
                 runplan = list(boots = 500,
-                               workers = 2, # changed from 8 per Jeff's suggestions
+                               workers = 2,
                                seed = as.integer(ymd('2025-04-16'))
                 ))
 
