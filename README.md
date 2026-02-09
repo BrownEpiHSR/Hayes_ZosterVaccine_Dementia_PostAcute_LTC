@@ -35,12 +35,14 @@ Artificial censoring occurs when an individual deviates from the assigned strate
 
 ### Censoring Rules Implemented
 Strategy: No Vaccination (Treat = 0)
+
 Individuals are censored at:
 * Vaccination date
 * Death
 * Disenrollment
-* End of follow-up
+* End of 4-year follow-up window 
 * Hospice
+* End of data (December 31, 2022)
 
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
