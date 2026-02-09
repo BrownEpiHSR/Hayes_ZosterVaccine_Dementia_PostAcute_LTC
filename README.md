@@ -90,6 +90,7 @@ Individuals are censored at minimum of:
 Strategy: Vaccination (Treat = 1). A grace period is allowed (12 months)
 
 For individuals assigned to have vaccine but they didnt have the vaccine at grace period.
+
 Individuals are censored at minimum of:
     * End of 12 month grace period
     * Death
