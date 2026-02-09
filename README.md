@@ -56,9 +56,9 @@ Individuals are censored at:
 * End of 4-year follow-up window 
 * End of data (December 31, 2022)
 * Hospice
+  
 If vaccination occurs within the grace period:
 * Follow-up continues
-* No censoring is applied
 
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
