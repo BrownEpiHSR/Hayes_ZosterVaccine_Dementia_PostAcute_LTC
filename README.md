@@ -101,14 +101,14 @@ Individuals are censored at minimum of:
 * Dementia diagnosis
 * Vaccination date (individuals can have vaccine after 12 months)
 
-For assigned to have vaccine and have the vaccine at grace period.
+For individuals assigned to have vaccine and have the vaccine at grace period.
 Individuals are censored at minimum of:
-    * Death
-    * Disenrollment
-    * End of 4-year follow-up window 
-    * End of data (December 31, 2022)
-    * Hospice
-    * Dementia diagnosis
+* Death
+* Disenrollment
+* End of 4-year follow-up window 
+* End of data (December 31, 2022)
+* Hospice
+* Dementia diagnosis
    
 If dementia occurs before censoring:
 * Event is counted
