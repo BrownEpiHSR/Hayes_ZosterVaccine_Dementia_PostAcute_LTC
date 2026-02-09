@@ -28,9 +28,7 @@ This ensures:
 
 This is why the outcome dataset contains:
 
-Treat = 0
-
-Treat = 1
+Treat = 0, Treat = 1
 
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
