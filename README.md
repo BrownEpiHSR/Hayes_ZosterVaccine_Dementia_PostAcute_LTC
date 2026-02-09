@@ -9,6 +9,26 @@ The analysis uses person-time panel datasets, inverse probability weighting (IPW
 * Cumulative incidence ratio (CIR)
 * 95% bootstrap confidence intervals
 
+## Clone–Censor–Weight (CCW) Design
+### Overview of the Approach
+
+ The CCW method consists of three steps:
+1. Clone individuals into treatment strategies
+2. Censor individuals when they deviate from their assigned strategy
+3. Weight observations to account for artificial censoring
+
+### Step 1: Clone
+      ### Each individual is duplicated and assigned to both strategies:
+* Strategy 1: No vaccination
+* Strategy 2: Vaccination within the grace period
+This ensures:
+* Both strategies start at the same baseline
+* Follow-up begins identically
+
+This is why the outcome dataset contains:
+Treat = 0
+Treat = 1
+
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
 * Remaining free of incident dementia (dementia-free) refers to survival without dementia.
