@@ -1,5 +1,5 @@
 
-###############################################################
+#################################################################
 # Project: Shingrix vaccine Exposure and Dementia Risk Study
 
 # DESCRIPTION:
@@ -48,7 +48,7 @@
 #   - Used to estimate dementia incidence risk
 #   - Allows evaluation of vaccine exposure effect on dementia
 
-#Set the directory
+# Set the directory
 setwd("P:/your data folder path")
 
 ## Load the required libraries
