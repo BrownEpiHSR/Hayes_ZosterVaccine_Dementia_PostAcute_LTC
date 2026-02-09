@@ -111,8 +111,8 @@ Individuals are censored at minimum of:
 * Hospice
 * Dementia diagnosis
    
-If dementia occurs before censoring:
-* Event is counted
+If dementia event occurs before censoring:
+* Dementia event is counted
 
 ## Methods Overview:
 
