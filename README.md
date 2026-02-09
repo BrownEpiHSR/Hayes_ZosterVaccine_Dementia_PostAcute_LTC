@@ -29,7 +29,7 @@ Follow-up ends at first occurrence of
 2. Death
 3. Disenrollment
 4. End of 4-year follow-up window 
-5. End of data
+5. End of data (December 31, 2022)
 6. Hospice entry
    
 Purpose
@@ -51,7 +51,7 @@ Follow-up ends at first occurrence of
 2. Death
 3. Disenrollment
 4. End of 4-year follow-up window
-5. End of data
+5. End of data (December 31, 2022)
 6. Hospice entry
    
 Purpose
