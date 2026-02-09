@@ -78,29 +78,36 @@ Artificial censoring occurs when an individual deviates from the assigned strate
 ### Censoring Rules Implemented
 Strategy: No Vaccination (Treat = 0)
 
-Individuals are censored at:
-* Vaccination date
+Individuals are censored at minimum of:
 * Death
 * Disenrollment
 * End of 4-year follow-up window 
 * Hospice
 * End of data (December 31, 2022)
 * Dementia diagnosis
+* Vaccination date 
 
-Strategy: Vaccination (Treat = 1)
+Strategy: Vaccination (Treat = 1). A grace period is allowed (12 months)
 
-A grace period is allowed (12 months).
+For individuals assigned to have vaccine but they didnt have the vaccine at grace period.
+Individuals are censored at minimum of:
+    * End of 12 month grace period
+    * Death
+    * Disenrollment
+    * End of 4-year follow-up window 
+    * End of data (December 31, 2022)
+    * Hospice
+    * Dementia diagnosis
+    * Vaccination date (individuals can have vaccine after 12 months)
 
-Individuals are censored at:
-* End of grace period if vaccination has not occurred
-
-If vaccination occurs within the grace period Follow-up continues
-* Death
-* Disenrollment
-* End of 4-year follow-up window 
-* End of data (December 31, 2022)
-* Hospice
-* Dementia diagnosis
+For assigned to have vaccine and have the vaccine at grace period.
+Individuals are censored at minimum of:
+    * Death
+    * Disenrollment
+    * End of 4-year follow-up window 
+    * End of data (December 31, 2022)
+    * Hospice
+    * Dementia diagnosis
  
 If dementia occurs before censoring:
 * Event is counted
