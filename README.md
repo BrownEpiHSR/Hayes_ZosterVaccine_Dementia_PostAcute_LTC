@@ -92,14 +92,14 @@ Strategy: Vaccination (Treat = 1). A grace period is allowed (12 months)
 For individuals assigned to have vaccine but they didnt have the vaccine at grace period.
 
 Individuals are censored at minimum of:
-    * End of 12 month grace period
-    * Death
-    * Disenrollment
-    * End of 4-year follow-up window 
-    * End of data (December 31, 2022)
-    * Hospice
-    * Dementia diagnosis
-    * Vaccination date (individuals can have vaccine after 12 months)
+* End of 12 month grace period
+* Death
+* Disenrollment
+* End of 4-year follow-up window 
+* End of data (December 31, 2022)
+* Hospice
+* Dementia diagnosis
+* Vaccination date (individuals can have vaccine after 12 months)
 
 For assigned to have vaccine and have the vaccine at grace period.
 Individuals are censored at minimum of:
