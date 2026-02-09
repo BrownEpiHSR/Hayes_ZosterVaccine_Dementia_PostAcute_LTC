@@ -149,6 +149,7 @@ Cumulative incidence is computed as: 1−pr_surv
 Aggregated by:
 * Treatment strategy
 * Follow-up interval
+  
 Effect measures:
 * CID = cumulative incidence difference
 * CIR = cumulative incidence ratio
