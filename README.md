@@ -9,61 +9,6 @@ The analysis uses person-time panel datasets, inverse probability weighting (IPW
 * Cumulative incidence ratio (CIR)
 * 95% bootstrap confidence intervals
 
-## Clone–Censor–Weight (CCW) Design
-### Overview of the Approach
-
- The CCW method consists of three steps:
-1. Clone individuals into treatment strategies
-2. Censor individuals when they deviate from their assigned strategy
-3. Weight observations to account for artificial censoring
-
-### Step 1: Clone
-Each individual is duplicated and assigned to both strategies:
-* Strategy 1: No vaccination
-* Strategy 2: Vaccination within the grace period
-
-This ensures:
-* Both strategies start at the same baseline
-* Follow-up begins identically
-
-This is why the outcome dataset contains:
-
-Treat = 0, Treat = 1
-
-### Step 2: Censor
-Artificial censoring occurs when an individual deviates from the assigned strategy.
-
-### Censoring Rules Implemented
-Strategy: No Vaccination (Treat = 0)
-
-Individuals are censored at:
-* Vaccination date
-* Death
-* Disenrollment
-* End of 4-year follow-up window 
-* Hospice
-* End of data (December 31, 2022)
-* Dementia diagnosis
-
-Strategy: Vaccination (Treat = 1)
-
-A grace period is allowed (12 months).
-
-Individuals are censored at:
-* End of grace period if vaccination has not occurred
-* Death
-* Disenrollment
-* End of 4-year follow-up window 
-* End of data (December 31, 2022)
-* Hospice
-* Dementia diagnosis
-
-If vaccination occurs within the grace period:
-* Follow-up continues
- 
-If dementia occurs before censoring:
-* Event is counted
-
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
 * Remaining free of incident dementia (dementia-free) refers to survival without dementia.
@@ -103,17 +48,62 @@ Purpose
 * Contains vaccination timing (t_treat)
 * Includes baseline and time-varying covariates
   
-Follow-up ends at first occurrence of
-1. Dementia diagnosis
-2. Death
-3. Disenrollment
-4. End of 4-year follow-up window
-5. End of data (December 31, 2022)
-6. Hospice entry
-   
 Purpose
 * Estimate dementia incidence
 * Evaluate vaccine exposure effect
+
+## Clone–Censor–Weight (CCW) Design for 2 treatment startegies below:
+### Overview of the Approach
+
+ The CCW method consists of following steps:
+1. Clone individuals into treatment strategies
+2. Censor individuals when they deviate from their assigned strategy
+
+### Step 1: Clone
+Each individual is duplicated and assigned to both strategies:
+* Strategy 1: No vaccination
+* Strategy 2: Vaccination within the grace period
+
+This ensures:
+* Both strategies start at the same baseline
+* Follow-up begins identically
+
+This is why the outcome dataset contains:
+
+Treat = 0, Treat = 1
+
+### Step 2: Censor
+Artificial censoring occurs when an individual deviates from the assigned strategy.
+
+### Censoring Rules Implemented
+Strategy: No Vaccination (Treat = 0)
+
+Individuals are censored at:
+* Vaccination date
+* Death
+* Disenrollment
+* End of 4-year follow-up window 
+* Hospice
+* End of data (December 31, 2022)
+* Dementia diagnosis
+
+Strategy: Vaccination (Treat = 1)
+
+A grace period is allowed (12 months).
+
+Individuals are censored at:
+* End of grace period if vaccination has not occurred
+
+If vaccination occurs within the grace period Follow-up continues
+* Death
+* Disenrollment
+* End of 4-year follow-up window 
+* End of data (December 31, 2022)
+* Hospice
+* Dementia diagnosis
+ 
+If dementia occurs before censoring:
+* Event is counted
 
 ## Methods Overview:
 
