@@ -52,7 +52,7 @@ Purpose
 * Estimate dementia incidence
 * Evaluate vaccine exposure effect
 
-## Clone–Censor–Weight (CCW) Design for 2 treatment startegies below:
+## Clone–Censor–Weight (CCW) design for 2 treatment startegies for 'outcome data panel' below:
 ### Overview of the Approach
 
  The CCW method consists of following steps:
