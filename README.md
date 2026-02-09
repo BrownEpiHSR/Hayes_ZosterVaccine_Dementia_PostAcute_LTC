@@ -58,7 +58,7 @@ Individuals are censored at:
 * Hospice
 * * Dementia diagnosis
  
-### If dementia occurs before censoring:
+#### If dementia occurs before censoring:
 * Event is counted
   
 If vaccination occurs within the grace period:
