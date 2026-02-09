@@ -21,6 +21,7 @@ The analysis uses person-time panel datasets, inverse probability weighting (IPW
 Each individual is duplicated and assigned to both strategies:
 * Strategy 1: No vaccination
 * Strategy 2: Vaccination within the grace period
+
 This ensures:
 * Both strategies start at the same baseline
 * Follow-up begins identically
