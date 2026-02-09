@@ -43,6 +43,7 @@ Individuals are censored at:
 * End of 4-year follow-up window 
 * Hospice
 * End of data (December 31, 2022)
+* Dementia diagnosis
 
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
