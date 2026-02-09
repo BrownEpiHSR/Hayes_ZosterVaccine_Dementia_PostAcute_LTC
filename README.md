@@ -58,7 +58,7 @@ Purpose
 * Estimate dementia incidence
 * Evaluate vaccine exposure effect
 
-Methods Overview:
+## Methods Overview:
 
 The analytic workflow proceeds as follows:
 ### 1. Treatment Model
