@@ -30,6 +30,18 @@ This is why the outcome dataset contains:
 
 Treat = 0, Treat = 1
 
+### Step 2: Censor
+Artificial censoring occurs when an individual deviates from the assigned strategy.
+
+### Censoring Rules Implemented
+Strategy: No Vaccination (Treat = 0)
+Individuals are censored at:
+* Vaccination date
+* Death
+* Disenrollment
+* End of follow-up
+* Hospice
+
 Throughout this project:
 * Incident dementia refers to the diagnosis of dementia.
 * Remaining free of incident dementia (dementia-free) refers to survival without dementia.
