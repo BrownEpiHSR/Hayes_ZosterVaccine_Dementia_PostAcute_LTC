@@ -102,6 +102,7 @@ Individuals are censored at minimum of:
 * Vaccination date (individuals can have vaccine after 12 months)
 
 For individuals assigned to have vaccine and have the vaccine at grace period.
+
 Individuals are censored at minimum of:
 * Death
 * Disenrollment
