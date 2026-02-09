@@ -27,6 +27,7 @@ This ensures:
 * Follow-up begins identically
 
 This is why the outcome dataset contains:
+
 Treat = 0
 Treat = 1
 
