@@ -56,6 +56,10 @@ Individuals are censored at:
 * End of 4-year follow-up window 
 * End of data (December 31, 2022)
 * Hospice
+* * Dementia diagnosis
+ 
+### If dementia occurs before censoring:
+* Event is counted
   
 If vaccination occurs within the grace period:
 * Follow-up continues
