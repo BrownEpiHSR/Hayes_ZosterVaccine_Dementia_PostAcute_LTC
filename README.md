@@ -1,9 +1,6 @@
 # IN PROGRESS: Clone-censor-weights-and-bootstrapping-in-R
 ### R code to construct IPW, fit weighted pooled logistic models, and estimate dementia cumulative incidence with bootstrap confidence intervals.
 
-
-## Shingrix vaccine Exposure and Dementia Risk Study
-
 ## Overview
 This repository contains code to estimate the association between vaccination and incident dementia using longitudinal administrative claims data.
 The analysis uses person-time panel datasets, inverse probability weighting (IPW), pooled logistic regression, and bootstrap methods to estimate:
