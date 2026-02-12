@@ -192,11 +192,11 @@ expanded_vaccine_0[, cumpr_notreat := cumprod(1-pr_treat), by = .(clientid)]
 
 # Imports dementia outcome panel dataset which contains both unassigned (not to have vaccine) treat = 0, and 
 # assigned (to have vaccine) treat = 1
-Demetia_outcome_1 <- read_sas("P:/your folder path/dementia_outcome1_final.sas7bdat", NULL)
+Dementia_outcome_1 <- read_sas("P:/your folder path/dementia_outcome1_final.sas7bdat", NULL)
 
 # Bring the cumulative probability from the treatment (exposure) dataset to the dementia outcome dataset and 
 # Include only necessary variables from exposure dataset. Match by clientid and time intervals across datasets
-dementia_outcome1_join = left_join(Demetia_outcome_1,
+dementia_outcome1_join = left_join(Dementia_outcome_1,
                                    select(expanded_vaccine_0, clientid, t_intrv, cumpr_notreat),
                                    by=c('clientid', 't_intrv'))
 
