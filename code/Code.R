@@ -211,7 +211,7 @@ setDT(dementia_outcome1_join)
 
 # Key inputs used here:
 #   - Treat == 0: untreated strategy 
-#   - Treat == 1: treated strategy with a 12-interval grace period
+#   - Treat == 1: treated strategy with a 12 month grace period
 #   - t_intrv: follow-up interval index (e.g., month number)
 #   - t_treat: interval when vaccination actually occurs 
 #   - cumpr_notreat: cumulative probability from treatment (exposure) dataset (computed earlier as cumprod(1 - pr_treat) 
