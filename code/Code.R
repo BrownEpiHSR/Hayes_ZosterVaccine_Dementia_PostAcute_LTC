@@ -424,7 +424,7 @@ d_fun_getplrwt = function(dta_outc, dta_treat, ...) {
     Treat==1 & t_intrv > 12 & is.na(t_treat), 1
   )]
   # ==========================================================
-  # 6) Create stabilized final weights (ipw1) by carrying forward treated-arm weights
+  # 6) Create final weights (ipw1) by carrying forward treated-arm weights
   # ==========================================================
   # For Treat==1:
   #   ipw1 = cumprod(ipw) within (clientid, Treat), which carries forward a weight
