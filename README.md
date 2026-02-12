@@ -1,4 +1,4 @@
-# IN PROGRESS: Clone-censor-weights-and-bootstrapping-in-R
+# IN PROGRESS: vaccination and incident dementia: Clone-censor-weights-and-bootstrapping-in-R
 ### R code to construct IPW, fit weighted pooled logistic models, and estimate dementia cumulative incidence with bootstrap confidence intervals.
 
 ## Overview
