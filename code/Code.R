@@ -220,8 +220,8 @@ setDT(dementia_outcome1_join)
 
 # NOTE: This is project-specific logic; changes to grace period rules or treatment
 
-#   - For Treat==0 observations, we weight by the inverse of the probability of remaining untreated up to time t (1 / cumpr_notreat).
-#   - For Treat==1 observations, a grace period is applied (here, t_intrv < 12): 
+#   - For Treat==0 observations, we weight by the inverse of the probability of remaining unvaccinated up to time t (1 / cumpr_notreat).
+#   - For Treat==1 observations, a grace period is applied (here, t_intrv < 12)
 #   - Individuals are not censored for not yet receiving treatment during the grace window, so weights are set to 1 in that period (cant censor at grace)
 #   - At the end of the grace period (t_intrv == 12): weights/censoring depend on whether vaccination occurred by the grace endpoint.
 #   - After grace (t_intrv > 12), weights are generally set to 1 because the treated strategy no longer censors based on "not yet treated" (per this design)
