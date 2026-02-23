@@ -223,7 +223,7 @@ setDT(dementia_outcome1_join)
 #   - For Treat==0 observations, we weight by the inverse of the probability of remaining unvaccinated up to time t (1 / cumpr_notreat).
 #   - For Treat==1 observations, a grace period is applied (here, t_intrv < 12)
 #   - Individuals are not censored for not yet receiving treatment during the grace window, so weights are set to 1 in that period (cant censor at grace)
-#   - At the end of the grace period (t_intrv == 12): weights/censoring depend on whether vaccination occurred (cumulative probability of vaccinated) by the grace endpoint. 
+#   - At the end of the grace period (t_intrv == 12): weights/censoring depend on whether vaccination occurred by the grace endpoint. 
 #   - After grace (t_intrv > 12), weights are generally set to 1 because the treated strategy no longer censors based on "not yet treated" (per this design)
 
 #   - fcase() is a function from the data.table package used to create variables based on multiple conditional rules
@@ -232,7 +232,7 @@ dementia_outcome1_join[, ipw := fcase(
   Treat==0, 1 / cumpr_notreat,
   Treat==1 & t_intrv < 12, 1, # trt - cant censor prior to grace
   Treat==1 & t_intrv == 12 & t_treat < 12, 1, # treat=1 & treat time < grace end, cant censor at grace
-  Treat==1 & t_intrv==12 & t_treat==12, 1 / (1-cumpr_notreat), # treated at grace, then weight: "sensitivity analysis is done using the weight of 1/pr_treat"
+  Treat==1 & t_intrv==12 & t_treat==12, 1 / (1-cumpr_notreat), # treated at grace, then weight (cumulative probability of vaccinated): "sensitivity analysis is done using the weight of 1/pr_treat"
   Treat==1 & t_intrv==12 & t_treat>12, 0, # treat=1, and not treated before grace, censor
   Treat==1 & t_intrv > 12, 1, # treat=1, after grace period, assign all weights as 1
   Treat==1 & t_intrv == 12 & is.na(t_treat), 0, # treat=1, for infinite time, assign all weights as 0
