@@ -499,7 +499,7 @@ results_d_bs <- list()
 
 # create do loop to run future map 1..x times, only set 1 bootstrap replicate 
 
-for (i in 1:50) {             # loop: repeat the whole bootstrap workflow 50 times
+for (i in 1:500) {             # loop: repeat the whole bootstrap workflow 500 times
   
   d_bs <- future_map(
     .x = 1:d_output$runplan$boots,     # bootstrap replicate IDs (here boots=1, so just 1)
