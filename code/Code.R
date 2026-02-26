@@ -123,16 +123,11 @@ grid.draw.ggsurvplot = function(x) {
   survminer:::print.ggsurvplot(x, newpage=F)
 }
 
-# Analysis runtime settings used throughout (including bootstrapping).
-d_output = list(runtime = Sys.time(),
-                runplan = list(boots = 500,
-                               workers = 2,
-                               seed = as.integer(ymd('2025-04-16'))
-                ))
-
-# Set the random number generator seed using the value stored in the run settings.
-# This ensures that any stochastic procedures (e.g., bootstrapping, sampling) produce reproducible results across runs.
-set.seed(d_output$runplan$seed)
+d_output = list(runtime = Sys.time(),           # Timestamp recorded at the moment this code runs (when the run starts)
+                runplan = list(                 # Nested list holding the run configuration / plan and 
+                        boots = 1,              # Number of bootstrap replications to run (here: 1)
+                               workers = 1)     # Number of parallel workers to use 
+                )
 
 # ------------------------------------------------------------
 # Treatment model: pooled logistic regression for vaccination
