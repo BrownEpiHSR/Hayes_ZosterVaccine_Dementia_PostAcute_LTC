@@ -333,8 +333,8 @@ write.csv(d_res1,file='P:your folder path/d_res1.csv', row.names=FALSE)
 # ------------------------------------------------------------
 # Configure Bootstrapping and Analysis Runtime Settings
 # ------------------------------------------------------------
-# Increase allowed size of global objects for parallel processing.
-# This prevents memory errors when large datasets or model objects are passed to workers during bootstrapping.
+# 
+# 
 
 options(future.globals.maxSize = +Inf) 
 
@@ -343,17 +343,13 @@ grid.draw.ggsurvplot = function(x) {
 }
 
 d_output = list(runtime = Sys.time(),
-                runplan = list(boots = 500,
-                               workers = 2, 
-                               seed = as.integer(ymd('2025-04-16'))
-                ))
+                runplan = list(boots = 1,
+                               workers = 1)
+                )
 
 # Set up parallel processing using the future package.
 # Multisession launches separate R sessions to run tasks in parallel. The number of parallel workers is taken from the analysis run plan.
 plan(multisession, workers = d_output$runplan$workers)
-
-# Set random seed for reproducibility. Ensures that stochastic procedures (e.g., bootstrapping) produce identical results when the analysis is re-run.
-set.seed(d_output$runplan$seed)
 
 # ==========================================================
 # 1) Create Poisson bootstrap (clustered by person)
@@ -500,12 +496,38 @@ d_ids_1= distinct(dementia_outcome1_join, clientid)
 #   - Treatment and outcome models are re-fitted
 #   - Predicted cumulative incidence of incident dementia is returned
 # future_map() executes iterations in parallel according to the previously defined future::plan().
+
+# create empty list
+results_d_bs <- list()
+
+# create do loop to run future map 1..x times, only set 1 bootstrap replicate 
+
+for (i in 1:50) {
 d_bs = future_map(.x = 1:d_output$runplan$boots,
                   .f = ~d_fun_getplrwt(
-                    select(dementia_outcome1_join, -cumpr_notreat),
+                    dementia_outcome1_join,
                     expanded_vaccine_0, d_ids_1,
                     .x),
                   .options = furrr_options(seed = T))
+
+d_bs_48 <- bind_rows(d_bs) %>% filter(t_intrv == 48)
+
+results_d_bs[[i]] <- d_bs_48
+
+write.csv(d_bs_48, file=paste0('d_bs_', i, '.csv'), row.names=FALSE)
+}
+
+# ==========================================================
+# 1) Stack bootstrap replicate outputs into one dataset
+# ==========================================================
+# d_bs is a list where each element is a data frame for one bootstrap replicate.
+# bind_rows(.id='boot') stacks them into a single data frame and adds a 'boot' column indicating which replicate each row came from.
+
+d_surv = bind_rows(results_d_bs)
+
+# Save the file in csv
+
+write.csv(d_surv,file='file_name.csv', row.names=FALSE)
 
 # ------------------------------------------------------------
 # Summarize bootstrap replicates into 95% confidence intervals
@@ -518,28 +540,6 @@ d_bs = future_map(.x = 1:d_output$runplan$boots,
 #        - cir: cumulative incidence ratio
 #   3) Appends point estimates from d_res1 to the bootstrap interval summary
 
-
-# ==========================================================
-# 1) Stack bootstrap replicate outputs into one dataset
-# ==========================================================
-# d_bs is a list where each element is a data frame for one bootstrap replicate.
-# bind_rows(.id='boot') stacks them into a single data frame and adds a 'boot' column indicating which replicate each row came from.
-# mutate() converts boot from character to numeric for easier sorting/plotting.
-
-d_surv = d_bs %>%
-  bind_rows(.id = 'boot') %>%
-  mutate(boot = as.numeric(boot))
-
-# ==========================================================
-# 2) Compute bootstrap 95% intervals by follow-up interval
-# ==========================================================
-# For each follow-up interval (t_intrv), compute:
-#   - lower confidence bound (lc): 2.5th percentile across bootstrap replicates
-#   - upper confidence bound (uc): 97.5th percentile across bootstrap replicates
-#   - na.rm=TRUE ensures missing values do not break quantile calculations.
-# Bind_cols() combines:
-  #   - point estimates from d_res1 (pr_ev_0, pr_ev_1, cir, cid)
-
 d_summ_surv1 = d_surv %>%
   group_by(t_intrv) %>%
   summarize(pr_ev_0_lc = quantile(pr_ev_0, 0.025, na.rm=T),
@@ -549,14 +549,12 @@ d_summ_surv1 = d_surv %>%
             pr_ev_0_uc = quantile(pr_ev_0, 0.975, na.rm=T),
             pr_ev_1_uc = quantile(pr_ev_1, 0.975, na.rm=T),
             cir_uc = quantile(cir, 0.975, na.rm=T),
-            cid_uc = quantile(cid, 0.975, na.rm=T)) %>%
-  bind_cols(select(d_res1, pr_ev_0, pr_ev_1, cir, cid),
-            .)
+            cid_uc = quantile(cid, 0.975, na.rm=T))
 
 # ------------------------------------------------------------
 # Export Final Bootstrap Summary Results to CSV
 # ------------------------------------------------------------
-write.csv(d_summ_surv1,file='P:/your folder path/dementia1_bl_tv.csv', row.names=FALSE)
+write.csv(d_summ_surv1,file='file_name.csv', row.names=FALSE)
 
 # ------------------------------------------------------------
 # Reload Results for Plotting
