@@ -504,11 +504,11 @@ results_d_bs <- list()
 
 # create do loop to run future map 1..x times, only set 1 bootstrap replicate 
 
-for (i in 1:50) {             # Outer loop: repeat the whole bootstrap workflow 50 times
+for (i in 1:50) {             # loop: repeat the whole bootstrap workflow 50 times
   
   d_bs <- future_map(
     .x = 1:d_output$runplan$boots,     # bootstrap replicate IDs (here boots=1, so just 1)
-    .f = ~ d_fun_getplrwt(             # Function applied to each bootstrap replicate ID (.x)
+    .f = ~ d_fun_getplrwt(             # Function applied to each bootstrap replicate ID
       dementia_outcome1_join,          
       expanded_vaccine_0,             
       d_ids_1,                         # ID list / cohort IDs used in the function
@@ -529,10 +529,10 @@ for (i in 1:50) {             # Outer loop: repeat the whole bootstrap workflow 
   write.csv(d_bs_48, file = paste0("d_bs_", i, ".csv"), row.names = FALSE)
 }
 
-  # Bind together all *previously stored* results (from earlier i iterations) into one data frame.
+  # After the loop: stack (row-bind) the 50 stored data frames into one combined data frame
   d_surv <- bind_rows(results_d_bs)
 
-  # Save the cumulative results to a CSV.
+  # Save the combined bootstrap results to a CSV.
   write.csv(d_surv, file = "file_name.csv", row.names = FALSE)
 
 # ------------------------------------------------------------
