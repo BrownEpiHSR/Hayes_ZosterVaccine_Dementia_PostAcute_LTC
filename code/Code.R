@@ -342,6 +342,8 @@ grid.draw.ggsurvplot = function(x) {
   survminer:::print.ggsurvplot(x, newpage=F)
 }
 
+# Create a list object that stores run metadata + settings
+
 d_output = list(runtime = Sys.time(),
                 runplan = list(boots = 1,
                                workers = 1)
