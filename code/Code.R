@@ -344,9 +344,10 @@ grid.draw.ggsurvplot = function(x) {
 
 # Create a list object that stores run metadata + settings
 
-d_output = list(runtime = Sys.time(),
-                runplan = list(boots = 1,
-                               workers = 1)
+d_output = list(runtime = Sys.time(),           # Timestamp recorded at the moment this code runs (when the run starts)
+                runplan = list(                 # Nested list holding the run configuration / plan and 
+                        boots = 1,              # Number of bootstrap replications to run (here: 1)
+                               workers = 1)     # Number of parallel workers to use 
                 )
 
 # Set up parallel processing using the future package.
