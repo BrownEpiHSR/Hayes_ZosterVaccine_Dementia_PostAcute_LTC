@@ -493,44 +493,47 @@ d_fun_getplrwt = function(dta_outc, dta_treat, ...) {
 
 d_ids_1= distinct(dementia_outcome1_join, clientid)
 
-# Run Poisson bootstrap replicates in parallel using furrr.
 # For each bootstrap iteration:
 #   - A Poisson(1) frequency weight is generated at the person month level inside d_fun_getplrwt()
 #   - Treatment and outcome models are re-fitted
 #   - Predicted cumulative incidence of incident dementia is returned
 # future_map() executes iterations in parallel according to the previously defined future::plan().
 
-# create empty list
+# Initialize an empty list to store results from each outer-loop iteration
 results_d_bs <- list()
 
 # create do loop to run future map 1..x times, only set 1 bootstrap replicate 
 
-for (i in 1:50) {
-d_bs = future_map(.x = 1:d_output$runplan$boots,
-                  .f = ~d_fun_getplrwt(
-                    dementia_outcome1_join,
-                    expanded_vaccine_0, d_ids_1,
-                    .x),
-                  .options = furrr_options(seed = T))
+for (i in 1:50) {             # Outer loop: repeat the whole bootstrap workflow 50 times
+  
+  d_bs <- future_map(
+    .x = 1:d_output$runplan$boots,     # bootstrap replicate IDs (here boots=1, so just 1)
+    .f = ~ d_fun_getplrwt(             # Function applied to each bootstrap replicate ID (.x)
+      dementia_outcome1_join,          
+      expanded_vaccine_0,             
+      d_ids_1,                         # ID list / cohort IDs used in the function
+      .x                               # Pass the bootstrap replicate number into the function
+    ),
+    .options = furrr_options(seed = TRUE) # Ensure reproducibility across parallel workers
+  )
 
-d_bs_48 <- bind_rows(d_bs) %>% filter(t_intrv == 48)
+  # Combine the list of results produced by future_map into one data frame,
+  # then keep only rows corresponding to the 48-month intervention time (t_intrv == 48)
+  d_bs_48 <- bind_rows(d_bs) %>%
+    filter(t_intrv == 48)
 
-results_d_bs[[i]] <- d_bs_48
+   # Store the current iteration’s filtered bootstrap output (t_intrv == 48) in the results list
+  results_d_bs[[i]] <- d_bs_48
 
-write.csv(d_bs_48, file=paste0('d_bs_', i, '.csv'), row.names=FALSE)
+  # Save the current iteration’s filtered output to its own CSV file (one file per i)
+  write.csv(d_bs_48, file = paste0("d_bs_", i, ".csv"), row.names = FALSE)
 }
 
-# ==========================================================
-# 1) Stack bootstrap replicate outputs into one dataset
-# ==========================================================
-# d_bs is a list where each element is a data frame for one bootstrap replicate.
-# bind_rows(.id='boot') stacks them into a single data frame and adds a 'boot' column indicating which replicate each row came from.
+  # Bind together all *previously stored* results (from earlier i iterations) into one data frame.
+  d_surv <- bind_rows(results_d_bs)
 
-d_surv = bind_rows(results_d_bs)
-
-# Save the file in csv
-
-write.csv(d_surv,file='file_name.csv', row.names=FALSE)
+  # Save the cumulative results to a CSV.
+  write.csv(d_surv, file = "file_name.csv", row.names = FALSE)
 
 # ------------------------------------------------------------
 # Summarize bootstrap replicates into 95% confidence intervals
