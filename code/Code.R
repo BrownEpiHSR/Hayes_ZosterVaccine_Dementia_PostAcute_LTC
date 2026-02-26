@@ -524,7 +524,7 @@ for (i in 1:500) {             # loop: repeat the whole bootstrap workflow 500 t
   write.csv(d_bs_48, file = paste0("d_bs_", i, ".csv"), row.names = FALSE)
 }
 
-  # After the loop: stack (row-bind) the 50 stored data frames into one combined data frame
+  # After the loop: stack (row-bind) the 500 stored data frames into one combined data frame
   d_surv <- bind_rows(results_d_bs)
 
   # Save the combined bootstrap results to a CSV.
