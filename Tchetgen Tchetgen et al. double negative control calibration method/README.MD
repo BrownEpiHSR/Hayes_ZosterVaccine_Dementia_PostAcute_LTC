@@ -16,11 +16,11 @@ This framework uses:
 
 ### Negative Control Exposure
 
-Treatment Strategy
+* Treatment Strategy
 
 Receipt of a wellness visit within 12 months of admission vs. never receiving a wellness visit over follow-up.
 
-Clone–Censor Implementation
+* Clone–Censor Implementation
 
 Each individual was cloned and assigned to:
 1.	Receive a wellness visit within 12 months
