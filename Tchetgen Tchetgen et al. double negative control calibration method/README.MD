@@ -10,6 +10,7 @@ We acknowledge that there is currently limited methodological guidance for imple
 In addition to the McGowan calibration approach, we implemented the regression-based double negative control method described by Tchetgen Tchetgen et al. and operationalized by Li et al.
 
 This framework uses:
+
 •	A negative control exposure
 •	A negative control outcome
 •	Regression calibration using predicted outcome probabilities
