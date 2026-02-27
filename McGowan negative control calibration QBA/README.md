@@ -1,4 +1,4 @@
-# McGowan Negative Control Outcome–Based On Quantitative Bias Analysis (QBA)
+## McGowan Negative Control Outcome–Based On Quantitative Bias Analysis (QBA)
 
 ## Overview
 This repository includes a quantitative bias analysis (QBA) that uses negative control outcomes to assess the potential impact of residual confounding in the primary vaccine–dementia analysis.
