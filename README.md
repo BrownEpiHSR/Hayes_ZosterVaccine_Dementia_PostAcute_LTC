@@ -15,8 +15,7 @@ What it contains:
      * Excel files documenting the project details, data sources, covariates definitions used in the analysis
 
 Purpose: 
-
-Implements the main target trial emulation evaluating the association between RHZ vaccination and incident dementia.
+* Implements the main target trial emulation evaluating the association between RHZ vaccination and incident dementia.
 
 2. McGowan Negative Control Calibration QBA
 
@@ -31,8 +30,7 @@ What it contains:
     * Explanation of bias parameters
  
 Purpose: 
-
-Implements the McGowan quantitative bias analysis (QBA) negative control calibration approach.
+* Implements the McGowan quantitative bias analysis (QBA) negative control calibration approach.
 
 3. Tchetgen Tchetgen et al. Double Negative Control Calibration
 
@@ -50,7 +48,7 @@ What it contains:
     * Description of the clone–censor adaptation
 
 Purpose:
- Implements the regression-based double negative control method proposed by Tchetgen Tchetgen et al., adapted to the clone–censor–weight framework.
+* Implements the regression-based double negative control method proposed by Tchetgen Tchetgen et al., adapted to the clone–censor–weight framework.
 
 
 
