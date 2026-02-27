@@ -174,6 +174,17 @@ print(c(wellness_pe$rr_adjusted,wellness_lb$rr_adjusted,wellness_up$rr_adjusted)
 # Simple QBA for a binary confounder
 ######################################
 
+# Purpose:
+#   Repeat the calibration using tipr's binary-confounder formulation.
+#   Here, the confounder is assumed to be binary, characterized by:
+#     a = prevalence of confounder among exposed (vaccinated)
+#     b = prevalence of confounder among unexposed (unvaccinated)
+#     c = confounder–outcome effect (RR scale)
+
+# Goal:
+#   Find (a, b, c) such that the adjusted hip fracture RR is ~1,
+#   then apply those parameters to the primary analysis RR.
+
 set.seed(1234) 
 
 n_points <- 10000
@@ -205,7 +216,7 @@ random_grid3$rr_adjusted <- mapply(
   random_grid3$c
 )
 
-#Identify the values of X and Y where adjusted RR is close to 1.0
+# Identify the values of X and Y where adjusted RR is close to 1.0
 null_parameters <- subset(random_grid3, rr_adjusted > 0.999 & rr_adjusted < 1.001, select = c(a, b,c, rr_adjusted))
 null_parameters$diff <- abs(1-null_parameters$rr_adjusted)
 null_parameters <- subset(null_parameters, diff == min(diff),select = c(a, b, c, rr_adjusted))
