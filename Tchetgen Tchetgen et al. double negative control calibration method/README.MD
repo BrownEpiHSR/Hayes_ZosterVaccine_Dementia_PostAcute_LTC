@@ -35,15 +35,14 @@ Inverse probability of censoring weights were estimated using:
 * Baseline covariates
 * Time-varying covariates
 
-#### Negative Control Outcome
-
-Hip Fracture
+### Negative Control Outcome
+    * Hip Fracture
 
 Comparison:
-•	Wellness visit within 12 months days vs.
-•	No wellness visit over follow-up
+    * Wellness visit within 12 months days vs.
+    * No wellness visit over follow-up
 
-#### Calibration Mechanism
+### Calibration Mechanism
 From the negative control model:
 
 1.	A weighted pooled logistic regression was fit for hip fracture.
