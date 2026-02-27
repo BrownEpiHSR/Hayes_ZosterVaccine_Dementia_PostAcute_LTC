@@ -21,10 +21,12 @@ We estimate the strength of confounding required to move the negative control RR
 # Software
 
 The QBA is implemented using the R package:
+
 tipr: The package provides functions to adjust observed risk ratios under assumed confounding structures.
 
 Primary Dementia Effect Estimates Used for Calibration
 From the main clone–censor–weight (CCW) + IPW analysis:
+
 * Point estimate: RR = 0.76
 * 95% CI: 0.69 – 0.84
 These values are treated as the “observed” effects to be calibrated.
