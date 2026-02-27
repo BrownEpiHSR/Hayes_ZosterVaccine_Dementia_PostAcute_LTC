@@ -27,7 +27,7 @@ library(tipr)
 options(scipen = 999)
 
 #######################################
-#Simple QBA for a continuous confounder
+# Simple QBA for a continuous confounder
 #######################################
 
 # -----------------------------------------------------------
@@ -40,7 +40,7 @@ rzv_ub <-0.84
   
 ##############################################
 # Negative Control Outcome 1: Hip Fracture
-# Point estimate (RR) = 0.86
+# Point estimate = 0.86
 ##############################################
 
 set.seed(1234) 
@@ -99,10 +99,9 @@ hip_frac_pe$rr_adjusted
 hip_frac_lb$rr_adjusted
 hip_frac_up$rr_adjusted
 
-
 ##############################################
-#Wellness visit
-#Association = 1.08 (95%CI=1.00-1.15)
+# Negative Control Outcome 2: Wellness Visit
+# # Association = 1.08 (95% CI 1.00–1.15)
 ##############################################
 
 set.seed(1234) 
@@ -128,11 +127,19 @@ random_grid_wellness$rr_adjusted <- mapply(
   random_grid_wellness$y
 )
 
-#Identify the values of X and Y where adjusted RR is close to 1.0. 
+# Identify the values of X and Y where adjusted RR is close to 1.0. 
 null_param_wellness <- subset(random_grid_wellness, rr_adjusted > 0.999 & rr_adjusted < 1.001, select = c(x, y,rr_adjusted))
 null_param_wellness$diff <- abs(1- null_param_wellness$rr_adjusted)
 null_param_wellness <- subset(null_param_wellness, diff == min(diff),select = c(x, y, rr_adjusted))
-null_param_wellness$y <- 1/null_param_wellness$y #Take the inverse because the main study RR is protective
+null_param_wellness$y <- 1/null_param_wellness$y # Take the inverse because the main study RR is protective
+
+# IMPORTANT:
+#   The primary analysis RR is protective (<1), while the wellness RR is >1.
+#   To map the bias direction consistently (protective vs harmful),
+#   this code inverts y (confounder–outcome effect) so the calibration aligns
+#   with a protective direction in the primary analysis.
+
+null_param_wellness$y <- 1 / null_param_wellness$y
 
 null_param_wellness
 
@@ -146,7 +153,7 @@ wellness_up$rr_adjusted
 
 
 ##############################
-#Final corrected results
+# Final corrected results
 ##############################
 
 hip_frac_pe$rr_adjusted
@@ -163,10 +170,9 @@ print(c(wellness_pe$rr_adjusted,wellness_lb$rr_adjusted,wellness_up$rr_adjusted)
 
 ####################################################################################################################################################################################
 
-
-################################
-#Simple QBA for a binary confounder
-################################
+######################################
+# Simple QBA for a binary confounder
+######################################
 
 set.seed(1234) 
 
