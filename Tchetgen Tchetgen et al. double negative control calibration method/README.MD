@@ -71,19 +71,18 @@ We implemented a cluster-level Poisson bootstrap:
 *	Repeat for 100 bootstrap replicates
 
 Confidence intervals computed using percentile method:
-•	95% CI → 2.5th / 97.5th percentiles
-•	99% CI → 0.5th / 99.5th percentiles
+  * 95% CI → 2.5th / 97.5th percentiles
+  *	99% CI → 0.5th / 99.5th percentiles
 
 #### Conceptual Interpretation
 The double negative control approach:
-
-•	Tests for residual confounding
-•	Quantifies potential bias
-•	Calibrates the primary estimate
-•	Strengthens causal interpretation under clone–censor framework
+*	Tests for residual confounding
+* Quantifies potential bias
+*	Calibrates the primary estimate
+*	Strengthens causal interpretation under clone–censor framework
 
 #### Methodological Considerations
-•	Limited published guidance exists for DNC implementation within clone–censor weighted data structures.
-•	Results should be interpreted in light of methodological innovation.
+*	Limited published guidance exists for DNC implementation within clone–censor weighted data structures.
+*	Results should be interpreted in light of methodological innovation.
 
 
