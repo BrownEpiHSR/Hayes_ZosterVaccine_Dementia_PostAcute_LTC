@@ -6,7 +6,6 @@ To probe and calibrate potential unmeasured confounding, we implemented the doub
 
 We acknowledge that there is currently limited methodological guidance for implementing double negative control methods in clone–censor structured longitudinal data with treatment strategies. This repository documents our adaptation for transparency.
 
-
 ### Double Negative Control Framework
 In addition to the McGowan calibration approach, we implemented the regression-based double negative control method described by Tchetgen Tchetgen et al. and operationalized by Li et al.
 This framework uses:
