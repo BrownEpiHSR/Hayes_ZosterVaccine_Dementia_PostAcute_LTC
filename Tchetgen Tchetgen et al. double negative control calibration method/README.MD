@@ -31,11 +31,9 @@ Clones were censored if they deviated from their assigned strategy:
 * Assigned to receive within 12 months but did not → censored immediately after grace window
 * Assigned to never receive but received one → censored at visit date
 
-
 Inverse probability of censoring weights were estimated using:
-
-	* Baseline covariates
-	* Time-varying covariates
+* Baseline covariates
+* Time-varying covariates
 
 #### Negative Control Outcome
 
