@@ -36,7 +36,7 @@ Inverse probability of censoring weights were estimated using:
 * Time-varying covariates
 
 ### Negative Control Outcome
-    * Hip Fracture
+* Hip Fracture
 
 Comparison:
     * Wellness visit within 12 months days vs.
