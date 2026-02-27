@@ -56,8 +56,9 @@ Two negative control outcomes are evaluated:
 
 We assume an unmeasured continuous and normally distributed confounder characterized by:
 * Unmeasured confounder-Exposure strength of association (x)
-      * Test X values ranged between 0.50 to 4.0
-      * X represents the scaled mean difference of the unmeasured confounder between the exposed and unexposed populations.
+  
+  * Test X values ranged between 0.50 to 4.0
+  * X represents the scaled mean difference of the unmeasured confounder between the exposed and unexposed populations.
 
 * Unmeasured confounder –Outcome strength of association (y)
 
