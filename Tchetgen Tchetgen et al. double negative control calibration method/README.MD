@@ -50,25 +50,25 @@ From the negative control model:
 2.	The time-varying predicted probability of hip fracture (hipfrac_hat) was generated.
 3.	These predicted probabilities were retained for each person-time interval.
 
-The calibrated dementia model includes:
+##### The calibrated dementia model includes:
 
 glm(outcome_dementia ~ poly(t_intrv,2)*Treat + hipfrac_hat,
     family = binomial(),
     weights = ipw1)
 
-
 This follows the double negative control logic:
-•	The negative control outcome captures residual confounding structure.
-•	Including predicted hip fracture probability adjusts for latent bias pathways.
+
+  * The negative control outcome captures residual confounding structure.
+  * Including predicted hip fracture probability adjusts for latent bias pathways.
 
 #### Bootstrap Procedure
 We implemented a cluster-level Poisson bootstrap:
-•	Bootstrap at individual level
-•	Re-estimate exposure model
-•	Recalculate weights
-•	Refit dementia model including hipfrac_hat
-•	Extract month 48 cumulative incidence
-•	Repeat for 100 bootstrap replicates
+*	Bootstrap at individual level
+*	Re-estimate exposure model
+*	Recalculate weights
+* Refit dementia model including hipfrac_hat
+*	Extract month 48 cumulative incidence
+*	Repeat for 100 bootstrap replicates
 
 Confidence intervals computed using percentile method:
 •	95% CI → 2.5th / 97.5th percentiles
