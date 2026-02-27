@@ -10,4 +10,6 @@ The folders are organized as follows:
 * Code/ → R scripts used for clone–censor–weight implementation, model estimation, and bootstrapping
 * Data Documentation/ → Excel files documenting the project details, data sources, covariates definitions used in the analysis
 
-Purpose: Implements the main target trial emulation evaluating the association between RHZ vaccination and incident dementia.
+Purpose: 
+
+Implements the main target trial emulation evaluating the association between RHZ vaccination and incident dementia.
