@@ -74,7 +74,6 @@ Confidence intervals computed using percentile method:
 •	95% CI → 2.5th / 97.5th percentiles
 •	99% CI → 0.5th / 99.5th percentiles
 
-
 #### Conceptual Interpretation
 The double negative control approach:
 
