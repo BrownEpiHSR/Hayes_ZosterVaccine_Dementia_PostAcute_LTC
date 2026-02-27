@@ -34,4 +34,23 @@ Purpose: 
 
 Implements the McGowan quantitative bias analysis (QBA) negative control calibration approach.
 
+3. Tchetgen Tchetgen et al. Double Negative Control Calibration
+
+What it contains:
+* Code
+    * R scripts for negative control exposure modeling (wellness visit)
+    * Hip fracture outcome modeling
+    * Construction of predicted hip fracture probabilities (hipfrac_hat)
+    * Inclusion of predicted negative control outcome in the dementia model
+    * Cluster-level Poisson bootstrap
+    * 95% and 99% confidence interval estimation
+
+* README.md
+    * Methodological explanation of the double negative control approach
+    * Description of the clone–censor adaptation
+
+Purpose:
+ Implements the regression-based double negative control method proposed by Tchetgen Tchetgen et al., adapted to the clone–censor–weight framework.
+
+
 
