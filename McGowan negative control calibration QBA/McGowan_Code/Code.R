@@ -26,10 +26,6 @@ library(tipr)
 # Print options: reduce scientific notation for readability
 options(scipen = 999)
 
-#######################################
-# Simple QBA for a continuous confounder
-#######################################
-
 # -----------------------------------------------------------
 # Primary study effect estimates to be calibrated
 # -----------------------------------------------------------
