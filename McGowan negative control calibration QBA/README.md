@@ -3,9 +3,11 @@
 # Overview
 ### This repository includes a quantitative bias analysis (QBA) that uses negative control outcomes to assess the potential impact of residual confounding in the primary vaccine–dementia analysis.
 
-The purpose of this analysis is to evaluate:
-If residual confounding is strong enough to produce the observed association between vaccination and a negative control outcome, how much could that same confounding shift the primary dementia risk estimate?
-This approach does not prove causality. Instead, it provides a structured sensitivity analysis to quantify how robust the primary findings are to unmeasured or residual confounding.
+# Purpose
+### The purpose of this analysis is to evaluate:
+#### If residual confounding is strong enough to produce the observed association between vaccination and a negative control outcome, how much could that same confounding shift the primary dementia risk estimate?
+
+#### This approach does not prove causality. Instead, it provides a structured sensitivity analysis to quantify how robust the primary findings are to unmeasured or residual confounding.
 
 
 Conceptual Framework
