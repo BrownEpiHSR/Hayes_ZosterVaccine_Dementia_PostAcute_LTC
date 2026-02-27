@@ -7,9 +7,31 @@ This repository is organized into three main analytical folders. Each folder con
 The folders are organized as follows:
 
 1. Primary Analysis
-* Code → R scripts used for clone–censor–weight implementation, model estimation, and bootstrapping
-* Data Documentation → Excel files documenting the project details, data sources, covariates definitions used in the analysis
+
+What it contains:
+* Code
+     * R scripts used for clone–censor–weight implementation, model estimation, and bootstrapping
+* Data Documentation
+     * Excel files documenting the project details, data sources, covariates definitions used in the analysis
 
 Purpose: 
 
 Implements the main target trial emulation evaluating the association between RHZ vaccination and incident dementia.
+
+2. McGowan Negative Control Calibration QBA
+
+What it contains:
+* Code
+    * R scripts implementing simulation-based bias parameter exploration
+    * Calibration of observed risk ratios under specified confounding scenarios
+    * Graphical and numerical sensitivity analyses
+
+* README.md
+    * Description of the QBA framework
+    * Explanation of bias parameters
+ 
+Purpose: 
+
+Implements the McGowan quantitative bias analysis (QBA) negative control calibration approach.
+
+
