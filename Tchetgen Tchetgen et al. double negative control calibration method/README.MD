@@ -29,8 +29,8 @@ Each individual was cloned and assigned to:
 
 Clones were censored if they deviated from their assigned strategy:
 
-     * Assigned to receive within 12 months but did not → censored immediately after grace window
-     * Assigned to never receive but received one → censored at visit date
+     *  Assigned to receive within 12 months but did not → censored immediately after grace window
+     *  Assigned to never receive but received one → censored at visit date
 
 Inverse probability of censoring weights were estimated using:
 
