@@ -35,11 +35,12 @@ Two negative control outcomes are evaluated:
  1. Hip Fracture
  * Observed association: RR = 0.86
 
-Method 1: Continuous Confounder Model
+## Method 1: Continuous Confounder Model
+
 We assume an unmeasured continuous confounder characterized by:
 * Exposure–confounder association (x)
 * Confounder–outcome association (y)
-We:
+
 1. Generate 10,000 random combinations of (x, y).
 2. For each pair, adjust the negative control RR.
 3. Identify parameter combinations that move the negative control RR to approximately 1.
