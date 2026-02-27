@@ -60,8 +60,9 @@ We assume an unmeasured continuous and normally distributed confounder character
       * X represents the scaled mean difference of the unmeasured confounder between the exposed and unexposed populations.
 
 * Unmeasured confounder –Outcome strength of association (y)
-      * Test Y values ranged between 0.50 and 4.0
-      * Y represents the estimated relationship between the confounder and binary outcome on the relative scale
+
+    * Test Y values ranged between 0.50 and 4.0
+    * Y represents the estimated relationship between the confounder and binary outcome on the relative scale
         (i.e., a value of 1.5 would represent a 50% greater risk in the outcome per every one-unit increase in the continuous unmeasured confounder). 
 
 1. Generate 10,000 random combinations of (x, y).
