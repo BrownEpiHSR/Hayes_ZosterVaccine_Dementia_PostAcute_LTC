@@ -59,7 +59,7 @@ As an alternative specification, we assume a binary unmeasured confounder define
 3. Apply those parameters to the primary dementia RR.
 This provides an alternative calibration under a discrete confounding structure.
 
-Assumptions
-Limitations
+### Assumptions -- If we want to include any ???
+### Limitations -- If we want to include any ???
 
 
