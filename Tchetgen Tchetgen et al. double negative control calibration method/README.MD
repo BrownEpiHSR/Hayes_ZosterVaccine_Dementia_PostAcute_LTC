@@ -50,7 +50,7 @@ From the negative control model:
 2.	The time-varying predicted probability of hip fracture (hipfrac_hat) was generated.
 3.	These predicted probabilities were retained for each person-time interval.
 
-##### The calibrated dementia model includes:
+#### The calibrated dementia model includes:
 
 glm(outcome_dementia ~ poly(t_intrv,2)*Treat + hipfrac_hat,
     family = binomial(),
