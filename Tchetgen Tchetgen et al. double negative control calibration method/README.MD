@@ -1,1 +1,1 @@
-# Double Negative Control Calibration in Clone–Censor Weighted Target Trial Emulation (Tchetgen Tchetgen et al.)
+## Double Negative Control Calibration (Tchetgen Tchetgen et al.)
