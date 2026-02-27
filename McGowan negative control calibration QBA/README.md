@@ -48,8 +48,8 @@ Two negative control outcomes are evaluated:
 
  #### 2. Wellness Visits
  * Point Estimate (RR) = 1.08 (95% CI 1.00–1.15)
-
-   * Interpretation: Individuals who received a recombinant herpes zoster vaccine within 12 months of admission to a skilled nursing facility
+ 
+ * Interpretation: Individuals who received a recombinant herpes zoster vaccine within 12 months of admission to a skilled nursing facility
      had a 8% greater risk of getting a wellness visit compared to individuals who never received the RZV. 
 
 ## Method 1: Continuous Confounder Model
