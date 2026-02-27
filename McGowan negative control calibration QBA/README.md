@@ -1,13 +1,14 @@
 ## McGowan Negative Control Outcome–Based On Quantitative Bias Analysis (QBA)
 
 ## Overview
-This repository includes a quantitative bias analysis (QBA) that uses negative control outcomes to assess the potential impact of residual confounding in the primary vaccine–dementia analysis.
+This repository includes a simple quantitative bias analysis (QBA) that uses negative control outcomes to assess and correct for residual confounding in the primary 
+recombinant herpes zoster vaccine (RZV) –dementia analysis.
 
 ## Purpose
 #### The purpose of this analysis is to evaluate:
-If residual confounding is strong enough to produce the observed association between vaccination and a negative control outcome, how much could that same confounding shift the primary dementia risk estimate?
-
-This approach does not prove causality. Instead, it provides a structured sensitivity analysis to quantify how robust the primary findings are to unmeasured or residual confounding.
+ * 1.	To quantify the extent of residual confounding for the vaccine-dementia associations of interest.
+ * 2.	To use the magnitudes of association between the RZV treatment strategy and negative control outcomes to calibrate the main effects.
+      In other words, to correct the main estimates according to the extent of residual confounding. 
 
 ## Conceptual Framework
   * RRobs = observed risk ratio from the primary dementia analysis
