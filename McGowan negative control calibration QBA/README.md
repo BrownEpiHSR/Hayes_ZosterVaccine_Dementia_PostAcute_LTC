@@ -6,8 +6,8 @@ recombinant herpes zoster vaccine (RZV) –dementia analysis.
 
 ## Purpose
 #### The purpose of this analysis is to evaluate:
- * 1.	To quantify the extent of residual confounding for the vaccine-dementia associations of interest.
- * 2.	To use the magnitudes of association between the RZV treatment strategy and negative control outcomes to calibrate the main effects.
+1.	To quantify the extent of residual confounding for the vaccine-dementia associations of interest.
+2.	To use the magnitudes of association between the RZV treatment strategy and negative control outcomes to calibrate the main effects.
       In other words, to correct the main estimates according to the extent of residual confounding. 
 
 ## Conceptual Framework
