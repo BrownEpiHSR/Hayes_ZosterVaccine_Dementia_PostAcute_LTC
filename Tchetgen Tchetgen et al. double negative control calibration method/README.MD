@@ -23,14 +23,17 @@ Receipt of a wellness visit within 12 months of admission vs. never receiving a 
 * Clone–Censor Implementation
 
 Each individual was cloned and assigned to:
+
 1.	Receive a wellness visit within 12 months
 2.	Never receive a wellness visit
 
 Clones were censored if they deviated from their assigned strategy:
+
      * Assigned to receive within 12 months but did not → censored immediately after grace window
      * Assigned to never receive but received one → censored at visit date
 
 Inverse probability of censoring weights were estimated using:
+
 	* Baseline covariates
 	* Time-varying covariates
 
