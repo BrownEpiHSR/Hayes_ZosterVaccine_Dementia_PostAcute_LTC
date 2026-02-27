@@ -7,8 +7,8 @@ This repository is organized into three main analytical folders. Each folder con
 The folders are organized as follows:
 
 1. Primary Analysis
-* Code/ → R scripts used for clone–censor–weight implementation, model estimation, and bootstrapping
-* Data Documentation/ → Excel files documenting the project details, data sources, covariates definitions used in the analysis
+* Code → R scripts used for clone–censor–weight implementation, model estimation, and bootstrapping
+* Data Documentation → Excel files documenting the project details, data sources, covariates definitions used in the analysis
 
 Purpose: 
 
