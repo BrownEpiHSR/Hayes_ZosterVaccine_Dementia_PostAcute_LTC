@@ -26,12 +26,14 @@ From the main clone–censor–weight (CCW) + IPW analysis:
 
 * Point estimate: RR = 0.76
 * 95% CI: 0.69 – 0.84
+  
 These values are treated as the “observed” effects to be calibrated.
 
-Negative Control Outcomes
+# Negative Control Outcomes
+
 Two negative control outcomes are evaluated:
-1. Hip Fracture
-Observed association: RR = 0.86
+ * 1. Hip Fracture
+ * Observed association: RR = 0.86
 
 Method 1: Continuous Confounder Model
 We assume an unmeasured continuous confounder characterized by:
