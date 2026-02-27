@@ -12,7 +12,9 @@ This approach does not prove causality. Instead, it provides a structured sensit
 
 # Conceptual Framework
 RRobs = observed risk ratio from the primary dementia analysis
+
 RRnc = observed risk ratio for a negative control outcome  
+
 We estimate the strength of confounding required to move the negative control RR to the null (RR ≈ 1). We then apply those inferred confounding parameters to the primary dementia RR to obtain a bias-calibrated estimate.
 
 
