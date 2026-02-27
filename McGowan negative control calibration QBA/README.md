@@ -76,19 +76,4 @@ We assume an unmeasured continuous and normally distributed confounder character
    2. We assume that the bias parameters used to nullify the negative control outcome analyses correspond with the residual confounding structure and extent in
          the primary RZV-dementia association. 
 
-## Method 2: Binary Confounder Model
-
-As an alternative specification, we assume a binary unmeasured confounder defined by:
-* a = prevalence among vaccinated
-* b = prevalence among unvaccinated
-* c = confounder–outcome effect (RR scale)
-  
-1. Randomly sample 10,000 (a, b, c) combinations.
-2. Identify parameter sets that move the negative control RR to ~1.
-3. Apply those parameters to the primary dementia RR.
-This provides an alternative calibration under a discrete confounding structure.
-
-### Assumptions -- If we want to include any ???
-### Limitations -- If we want to include any ???
-
 
