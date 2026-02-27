@@ -34,10 +34,10 @@ These values are treated as the “observed” effects to be calibrated.
 
 Two negative control outcomes are evaluated:
 
- 1. Hip Fracture
+ #### 1. Hip Fracture
  * Point Estimate (RR) = 0.86
 
- 2. Wellness Visits
+ #### 2. Wellness Visits
  * Point Estimate (RR) = 1.08 (95% CI 1.00–1.15)
 
 ## Method 1: Continuous Confounder Model
