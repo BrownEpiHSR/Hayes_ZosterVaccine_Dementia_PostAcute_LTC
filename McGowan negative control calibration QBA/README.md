@@ -47,12 +47,13 @@ We assume an unmeasured continuous confounder characterized by:
 4. Apply those parameter values to adjust the primary dementia RR.
 This yields a calibrated RR that reflects the degree of confounding needed to fully explain the negative control association.
 
-Method 2: Binary Confounder Model
+## Method 2: Binary Confounder Model
+
 As an alternative specification, we assume a binary unmeasured confounder defined by:
 * a = prevalence among vaccinated
 * b = prevalence among unvaccinated
 * c = confounder–outcome effect (RR scale)
-We:
+  
 1. Randomly sample 10,000 (a, b, c) combinations.
 2. Identify parameter sets that move the negative control RR to ~1.
 3. Apply those parameters to the primary dementia RR.
