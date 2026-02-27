@@ -22,6 +22,7 @@ The QBA is implemented using the R package:
 tipr: The package provides functions to adjust observed risk ratios under assumed confounding structures.
 
 Primary Dementia Effect Estimates Used for Calibration
+
 From the main clone–censor–weight (CCW) + IPW analysis:
 
 * Point estimate: RR = 0.76
