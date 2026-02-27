@@ -32,7 +32,7 @@ These values are treated as the “observed” effects to be calibrated.
 # Negative Control Outcomes
 
 Two negative control outcomes are evaluated:
- * 1. Hip Fracture
+ 1. Hip Fracture
  * Observed association: RR = 0.86
 
 Method 1: Continuous Confounder Model
