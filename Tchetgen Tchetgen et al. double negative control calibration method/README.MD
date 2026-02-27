@@ -39,8 +39,8 @@ Inverse probability of censoring weights were estimated using:
 * Hip Fracture
 
 Comparison:
-    * Wellness visit within 12 months days vs.
-    * No wellness visit over follow-up
+   * Wellness visit within 12 months days vs.
+   * No wellness visit over follow-up
 
 ### Calibration Mechanism
 From the negative control model:
