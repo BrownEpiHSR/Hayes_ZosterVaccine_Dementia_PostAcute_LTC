@@ -3,7 +3,7 @@
 This repository implements a regression-based double negative control calibration analysis to evaluate and adjust for residual confounding in a target trial emulation of recombinant herpes zoster vaccination (rHZ) and incident dementia among skilled nursing facility residents.
 
 To probe and calibrate potential unmeasured confounding, we implemented the double negative control method proposed by Tchetgen Tchetgen et
-al. (DOI: 10.1214/23-STS911), and applied by Li et al. (https://projecteuclid.org/journals/statistical-science/volume-39/issue-3/An-Introduction-to-Proximal-Causal-Inference/10.1214/23-STS911.short), adapting it to the clone–censor weighted framework.
+al. (https://pubmed.ncbi.nlm.nih.gov/40513053/), and applied by Li et al. (https://projecteuclid.org/journals/statistical-science/volume-39/issue-3/An-Introduction-to-Proximal-Causal-Inference/10.1214/23-STS911.short), adapting it to the clone–censor weighted framework.
 
 We acknowledge that there is currently limited methodological guidance for implementing double negative control methods in clone–censor structured longitudinal data with treatment strategies. This repository documents our adaptation for transparency.
 
