@@ -166,10 +166,6 @@ print(c(wellness_pe$rr_adjusted,wellness_lb$rr_adjusted,wellness_up$rr_adjusted)
 
 ####################################################################################################################################################################################
 
-######################################
-# Simple QBA for a binary confounder
-######################################
-
 # Purpose:
 #   Repeat the calibration using tipr's binary-confounder formulation.
 #   Here, the confounder is assumed to be binary, characterized by:
